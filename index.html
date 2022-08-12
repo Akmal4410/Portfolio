@@ -464,28 +464,29 @@
 			<form id="submit-form" action="">
 				<div class="row form-group">
 					<div class="col-md-12">
-						<input type="text" id="fname" name="name" class="form-control" placeholder="Your firstname">
+						<input type="text" id="fname" name="name" class="form-control" placeholder="Your firstname"
+							onkeyup="validateName()" required pattern="[A-Z a-z]{2,25}">
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
 						<input type="email" id="email" name="email" class="form-control"
-							placeholder="Your email address">
+							placeholder="Your email address" onkeyup="validateEmail()" required>
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
 						<input type="text" name="subjects" id="subject" class="form-control"
-							placeholder="Your subject of this message">
+							placeholder="Your subject of this message" required>
 					</div>
 				</div>
 
 				<div class="row form-group">
 					<div class="col-md-12">
 						<textarea name="message" id="message" cols="30" rows="10" class="form-control"
-							placeholder="Say something about us"></textarea>
+							placeholder="Say something about us" onkeyup="validateMessage()" required></textarea>
 					</div>
 				</div>
 				<div class="form-group">
@@ -571,6 +572,10 @@
 			emailError.style.color = 'green'
 			return true;
 		}
+
+
+
+
 
 		function validateMessage() {
 			var message = document.getElementById('contact-message').value.trim();
