@@ -542,8 +542,8 @@
 
 
 		function validateName() {
-			var name = document.getElementById('contact-name').value;
-			console.log(name)
+			var name = document.getElementById('contact-name').value.trim();
+
 			if (name.length == 0) {
 				nameError.innerHTML = 'Name is Required';
 				nameError.style.color = 'red'
